@@ -1,0 +1,22 @@
+<mat-grid-list cols="2">
+    <mat-grid-tile rowspan="1">
+        <img mat-card-xl-image [src]="product?.url" />
+    </mat-grid-tile>
+    <mat-grid-tile rowspan="1">
+        <mat-card>
+            <mat-card-header>
+                <mat-card-title>{{product?.name}}</mat-card-title>
+                <mat-card-subtitle>{{product?.price}}</mat-card-subtitle>
+            </mat-card-header>
+            <mat-card-content>
+                <p>{{product?.description}}</p>
+            </mat-card-content>
+            <mat-card-actions>
+                <a mat-icon-button color="primary" routerLink="/products">
+                    <mat-icon fontIcon="arrow_back"></mat-icon>
+                </a>
+                <button mat-flat-button color="primary" (click)="addToCart()">Add to cart</button>
+            </mat-card-actions>
+        </mat-card>
+    </mat-grid-tile>
+</mat-grid-list>

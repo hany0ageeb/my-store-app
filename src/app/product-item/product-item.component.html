@@ -1,0 +1,17 @@
+<mat-card>
+    <a [routerLink]="['/products', product.id]">
+        <img mat-card-md-image [src]="product.url" />
+    </a>
+    <mat-card-header>
+        <mat-card-title>{{product.name}}</mat-card-title>
+        <mat-card-subtitle>{{product.price}}</mat-card-subtitle>
+    </mat-card-header>
+    <mat-card-actions>
+        <button mat-flat-button color="primary" (click)="addToCart()">Add to Cart</button>
+    </mat-card-actions>
+    <mat-card-actions>
+        <button mat-flat-button color="primary" (click)="removeFromCart()" [disabled]="!enableRemoveFromCart">Remove
+            from
+            Cart</button>
+    </mat-card-actions>
+</mat-card>
