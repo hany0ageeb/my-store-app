@@ -3,7 +3,8 @@
         <span color="primary">My Store</span>
         <div class="link-group">
             <a mat-flat-button color="primary" routerLink="/">Products</a>
-            <a mat-flat-button color="primary" routerLink="/cart" matBadge="" matBadgeOverlap="false">Shopping Cart</a>
+            <a mat-flat-button color="primary" routerLink="/cart" [matBadge]="productCount" matBadgeSize="medium"
+                matBadgeColor="accent">Shopping Cart</a>
         </div>
     </mat-toolbar-row>
 </mat-toolbar>

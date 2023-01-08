@@ -1,4 +1,5 @@
-import { Component, OnInit, Input } from '@angular/core';
+
+import { Component, OnInit, Input, Output, EventEmitter } from '@angular/core';
 import { Product } from '../models/product.model';
 import { CartService } from '../services/cart.service';
 
@@ -8,7 +9,9 @@ import { CartService } from '../services/cart.service';
   styleUrls: ['./product-item.component.css']
 })
 export class ProductItemComponent implements OnInit{
-  @Input() product: Product= new Product();
+  @Input() product: Product = new Product();
+  @Output() productSelected: EventEmitter<Product> = new EventEmitter<Product>();
+
   constructor(private cartService: CartService){
   }
   ngOnInit(): void {
@@ -23,5 +26,9 @@ export class ProductItemComponent implements OnInit{
   }
   get enableRemoveFromCart(): boolean{
     return this.cartService.lines.filter(p=>p.product.id === this.product.id).length > 0;
+  }
+  onClick(): boolean{
+    this.productSelected.emit(this.product);
+    return false;
   }
 }

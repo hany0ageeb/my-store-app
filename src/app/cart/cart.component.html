@@ -18,6 +18,13 @@
                     {{line.product.description}}
                 </mat-card-content>
             </mat-card>
+            <div *ngIf="getTotalValue() > 0">
+                <mat-card>
+                    <mat-card-header>
+                        <mat-card-title>Total Value {{getTotalValue()}}</mat-card-title>
+                    </mat-card-header>
+                </mat-card>
+            </div>
         </div>
     </div>
     <div class="col2">
@@ -26,7 +33,8 @@
                 <mat-form-field appearance="fill">
                     <mat-label>Full Name</mat-label>
                     <input #customerFullName="ngModel" name="fullName" type="text" required minlength="6" matInput
-                        placeholder="Enter Full Name" [(ngModel)]="fullName" />
+                        placeholder="Enter Full Name" [(ngModel)]="fullName"
+                        (ngModelChange)="onFullNameNgModelChange($event)" />
                 </mat-form-field>
             </div>
             <div>

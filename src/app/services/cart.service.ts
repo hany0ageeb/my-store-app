@@ -33,9 +33,19 @@ export class CartService {
     this.lines.forEach((line)=>{
       totalValue += line.total;
     });
-    return totalValue;
+    return Number(totalValue.toFixed(2));
   }
   confirm():void{
     this.lines = [];
+  }
+  productCount(): number{
+    if(this.lines.length==0){
+      return 0;
+    }
+    let count = 0;
+    this.lines.forEach(l=>{
+      count += l.quantity;
+    });
+    return count;
   }
 }

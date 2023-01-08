@@ -1,5 +1,6 @@
 <mat-card>
-    <a [routerLink]="['/products', product.id]">
+    <!--[routerLink]="['/products', product.id]"-->
+    <a (click)="onClick()">
         <img mat-card-md-image [src]="product.url" />
     </a>
     <mat-card-header>

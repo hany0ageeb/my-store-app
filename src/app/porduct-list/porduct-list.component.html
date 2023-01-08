@@ -1,7 +1,6 @@
 <mat-grid-list cols="3" rowHeight="1:1">
     <mat-grid-tile *ngFor="let product of sortedProducts">
-        <app-product-item [product]="product">
-
+        <app-product-item [product]="product" (productSelected)="onProductSelected($event)">
         </app-product-item>
     </mat-grid-tile>
 </mat-grid-list>

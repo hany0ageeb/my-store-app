@@ -28,12 +28,10 @@ export class CartComponent implements OnInit{
     this.cartService.confirm();
     return false;
   }
-  /*
-  onLineAmountChanged(): void{
-
-  }
-  */
   getTotalValue(): number{
     return this.cartService.total;
+  }
+  onFullNameNgModelChange(value: string){
+    
   }
 }
